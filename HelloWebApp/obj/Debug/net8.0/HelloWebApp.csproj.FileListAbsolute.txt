@@ -15,6 +15,7 @@
 /Users/shariqueahmad/Documents/Projects/SimpleDotNetApp/HelloWebApp/obj/Debug/net8.0/HelloWebApp.MvcApplicationPartsAssemblyInfo.cache
 /Users/shariqueahmad/Documents/Projects/SimpleDotNetApp/HelloWebApp/obj/Debug/net8.0/HelloWebApp.RazorAssemblyInfo.cache
 /Users/shariqueahmad/Documents/Projects/SimpleDotNetApp/HelloWebApp/obj/Debug/net8.0/HelloWebApp.RazorAssemblyInfo.cs
+/Users/shariqueahmad/Documents/Projects/SimpleDotNetApp/HelloWebApp/obj/Debug/net8.0/HelloWebApp.sourcelink.json
 /Users/shariqueahmad/Documents/Projects/SimpleDotNetApp/HelloWebApp/obj/Debug/net8.0/staticwebassets.build.json
 /Users/shariqueahmad/Documents/Projects/SimpleDotNetApp/HelloWebApp/obj/Debug/net8.0/staticwebassets.development.json
 /Users/shariqueahmad/Documents/Projects/SimpleDotNetApp/HelloWebApp/obj/Debug/net8.0/staticwebassets/msbuild.HelloWebApp.Microsoft.AspNetCore.StaticWebAssets.props

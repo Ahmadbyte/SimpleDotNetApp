@@ -14,8 +14,7 @@ body {
     max-width: 900px; /* Increase the container width */
     width: 100%; /* Full width */
     padding: 40px; /* Increase padding for a roomier feel */
-    padding-top: 1px;
-    background-color: rgb(233, 233, 233); /* Background color */
+    background-color: rgb(243, 226, 238); /* Background color */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Box shadow */
     border-radius: 8px; /* Rounded corners */
     text-align: center; /* Center text */
@@ -24,8 +23,12 @@ body {
 /* Heading */
 h1 {
     font-size: 2.5em; /* Increase font size */
-    color: #333; /* Heading color */
+    background: linear-gradient(45deg, #ff6a00, #ee0979); /* Gradient colors */
+    -webkit-background-clip: text; /* Clip background to text */
+    -webkit-text-fill-color: transparent; /* Make text color transparent */
     margin-bottom: 20px; /* Margin below heading */
+    margin-top: -10px; /* Margin above heading */
+    display: inline-block; /* Ensure gradient applies correctly */
 }
 
 /* Current Time Display */
@@ -72,16 +75,17 @@ h1 {
 
 /* Microphone Button */
 #microphoneButton {
+    padding: 8px; /* Adjust padding */
     background-color: transparent; /* Transparent background */
     border: none; /* No border */
     cursor: pointer; /* Pointer cursor */
-    padding: 0; /* Remove padding */
     margin-left: 10px; /* Space from other elements */
+    outline: none; /* Remove outline */
 }
 
 /* Microphone Icon */
 #microphoneButton i {
-    font-size: 25px; /* Increase icon size */
+    font-size: 28px; /* Increase icon size */
     color: #4285f4; /* Match button color */
 }
 
@@ -115,11 +119,10 @@ h1 {
 /* Todo Button */
 .todo-section button {
     padding: 12px 20px; /* Padding for todo button */
-    background-color: #5cb85c; /* Button color */
+    background-color: #5cb85c; /* Green button color */
     color: white; /* Button text color */
     border: none; /* No border */
     border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor */
 }
 
 /* Todo Button Hover Effect */
@@ -127,17 +130,50 @@ h1 {
     background-color: #4cae4c; /* Darken button on hover */
 }
 
-/* Todo List Items */
-#todoList {
-    list-style-type: none; /* No list bullets */
-    padding: 0; /* No padding */
-    margin: 0; /* No margin */
-}
-
-/* Footer */
+/* Footer Styles */
 footer {
     margin-top: 10px; /* Margin above footer */
-    font-size: 0.9em; /* Smaller font size for footer */
-    color: #666; /* Footer text color */
-    text-align: center;
+    font-size: 1em; /* Font size for footer */
+    color: #777; /* Footer text color */
+    text-align: center; /* Center text */
+    margin-left: 70px;
 }
+
+/* Delete Button */
+.deleteButton {
+    margin-left: 10px; /* Space between todo text and delete button */
+    background-color: #dc3545; /* Red background for delete button */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    padding: 4px 8px; /* Padding inside button */
+}
+
+/* Delete Button Hover Effect */
+.deleteButton button:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: -5px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: #000; /* Set color for the icons */
+    text-decoration: none; /* Remove underline */
+}
+
+.social-icons i {
+    font-size: 24px; /* Adjust icon size */
+}
+
+/* Social Icons Hover Effect */
+.social-icons a:hover {
+    color: #4285f4; /* Change color on hover */
+}
+
