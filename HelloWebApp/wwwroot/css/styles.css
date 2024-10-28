@@ -1,0 +1,143 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #73e6d4; /* Background color */
+    display: flex;
+    justify-content: center; /* Center content */
+    align-items: center; /* Align content vertically */
+    min-height: 100vh; /* Full height of the viewport */
+    margin: 0; /* Remove default margin */
+}
+
+/* Main Container */
+.main-container {
+    max-width: 900px; /* Increase the container width */
+    width: 100%; /* Full width */
+    padding: 40px; /* Increase padding for a roomier feel */
+    padding-top: 1px;
+    background-color: rgb(233, 233, 233); /* Background color */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Box shadow */
+    border-radius: 8px; /* Rounded corners */
+    text-align: center; /* Center text */
+}
+
+/* Heading */
+h1 {
+    font-size: 2.5em; /* Increase font size */
+    color: #333; /* Heading color */
+    margin-bottom: 20px; /* Margin below heading */
+}
+
+/* Current Time Display */
+.time-display {
+    font-size: 1.2em; /* Slightly increase the font size */
+    color: #555; /* Time color */
+    margin-bottom: 30px; /* Margin below time display */
+}
+
+/* Search Section */
+.search-section {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 30px; /* Margin below search section */
+}
+
+/* Search Input */
+.search-section input[type="text"] {
+    padding: 12px; /* Padding inside input */
+    width: 75%; /* Expand input width */
+    max-width: 700px; /* Max width for input */
+    border: 1px solid #ddd; /* Border style */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 1.1em; /* Font size */
+}
+
+/* Search Button */
+.search-section button {
+    padding: 12px 25px; /* Padding inside button */
+    background-color: #4285f4; /* Button color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1.1em; /* Font size for button */
+    margin-left: 10px; /* Space between input and button */
+}
+
+/* Search Button Hover Effect */
+.search-section button:hover {
+    background-color: #357ae8; /* Darken button on hover */
+}
+
+/* Microphone Button */
+#microphoneButton {
+    background-color: transparent; /* Transparent background */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor */
+    padding: 0; /* Remove padding */
+    margin-left: 10px; /* Space from other elements */
+}
+
+/* Microphone Icon */
+#microphoneButton i {
+    font-size: 25px; /* Increase icon size */
+    color: #4285f4; /* Match button color */
+}
+
+/* Microphone Icon Hover Effect */
+#microphoneButton:hover i {
+    color: #357ae8; /* Change icon color on hover */
+}
+
+/* Search Results Section */
+.search-results p {
+    font-size: 1.1em; /* Font size for results */
+    color: #333; /* Text color for results */
+    text-align: left; /* Align text to the left */
+    padding: 8px 0; /* Padding between results */
+}
+
+/* Todo List Section */
+.todo-section {
+    margin-top: 30px; /* Margin above todo section */
+}
+
+/* Todo Input */
+.todo-section input[type="text"] {
+    padding: 12px; /* Padding inside input */
+    width: calc(100% - 120px); /* Width calculation */
+    margin-right: 10px; /* Space between input and button */
+    border: 1px solid #ddd; /* Border style */
+    border-radius: 4px; /* Rounded corners */
+}
+
+/* Todo Button */
+.todo-section button {
+    padding: 12px 20px; /* Padding for todo button */
+    background-color: #5cb85c; /* Button color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+}
+
+/* Todo Button Hover Effect */
+.todo-section button:hover {
+    background-color: #4cae4c; /* Darken button on hover */
+}
+
+/* Todo List Items */
+#todoList {
+    list-style-type: none; /* No list bullets */
+    padding: 0; /* No padding */
+    margin: 0; /* No margin */
+}
+
+/* Footer */
+footer {
+    margin-top: 10px; /* Margin above footer */
+    font-size: 0.9em; /* Smaller font size for footer */
+    color: #666; /* Footer text color */
+    text-align: center;
+}
