@@ -130,29 +130,41 @@ h1 {
     background-color: #4cae4c; /* Darken button on hover */
 }
 
+/* Todo List Items */
+/* Todo List Items */
+#todoList li {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between todo text and delete button */
+    align-items: center; /* Center items vertically */
+    padding: 12px; /* Padding for each todo item */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 10px; /* Spacing between todos */
+    background-color: #ffffff; /* White background for todos */
+    text-align: left; /* Align text to the left */
+    margin-right: 70px;
+}
+
+/* Delete Button */
+.deleteButton {
+    background-color: transparent; /* Transparent background for the delete button */
+    color: #dc3545; /* Red text color */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor */
+}
+
+/* Delete Button Hover Effect */
+.deleteButton:hover {
+    color: #c82333; /* Darker red on hover */
+}
+
+
 /* Footer Styles */
 footer {
     margin-top: 10px; /* Margin above footer */
     font-size: 1em; /* Font size for footer */
     color: #777; /* Footer text color */
     text-align: center; /* Center text */
-    margin-left: 70px;
-}
-
-/* Delete Button */
-.deleteButton {
-    margin-left: 10px; /* Space between todo text and delete button */
-    background-color: #dc3545; /* Red background for delete button */
-    color: white; /* White text */
-    border: none; /* No border */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor */
-    padding: 4px 8px; /* Padding inside button */
-}
-
-/* Delete Button Hover Effect */
-.deleteButton button:hover {
-    background-color: #c82333; /* Darker red on hover */
 }
 
 /* Social Icons */
@@ -176,4 +188,3 @@ footer {
 .social-icons a:hover {
     color: #4285f4; /* Change color on hover */
 }
-

@@ -5,10 +5,8 @@
 }
 
 <link rel="stylesheet" href="~/css/styles.css" />
-<!-- Include Font Awesome CDN for icons -->
+<!-- Include Material Icons CDN for icons -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-@* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMOq41c1n+E2w5A3P1D2M6j5xaUjF0nI0gJvIe" crossorigin="anonymous"> *@
-
 
 <div class="main-container">
     <h1>Search App</h1>
@@ -121,27 +119,37 @@
 
         // Todo List Functionality
         document.getElementById("addTodoButton").onclick = function() {
-            const todoInput = document.getElementById("todoInput");
-            const todoText = todoInput.value.trim();
-            if (todoText) {
-                const todoList = document.getElementById("todoList");
-                const newTodoItem = document.createElement("li");
-                newTodoItem.textContent = todoText;
+    const todoInput = document.getElementById("todoInput");
+    const todoText = todoInput.value.trim();
+    if (todoText) {
+        const todoList = document.getElementById("todoList");
+        const newTodoItem = document.createElement("li");
 
-                // Create delete button
-                const deleteButton = document.createElement("button");
-                deleteButton.textContent = "Delete";
-                deleteButton.className = "deleteButton";
-                deleteButton.onclick = function() {
-                    todoList.removeChild(newTodoItem);
-                };
+        // Create a span for the todo text
+        const todoSpan = document.createElement("span");
+        todoSpan.textContent = todoText;
 
-                newTodoItem.appendChild(deleteButton);
-                todoList.appendChild(newTodoItem);
-                todoInput.value = ""; // Clear input
-            } else {
-                alert("Please enter a task.");
-            }
+        // Create delete icon only (without a button)
+        const deleteIcon = document.createElement("span");
+        deleteIcon.className = "material-icons";
+        deleteIcon.style.fontSize = "16px";
+        deleteIcon.style.color = "red";
+        deleteIcon.style.cursor = "pointer"; // Make it look clickable
+        deleteIcon.innerText = "delete"; // Material icon for delete
+
+        // Attach click event to the delete icon
+        deleteIcon.onclick = function() {
+            todoList.removeChild(newTodoItem);
         };
+
+        // Append elements to new todo item
+        newTodoItem.appendChild(todoSpan);
+        newTodoItem.appendChild(deleteIcon);
+        todoList.appendChild(newTodoItem);
+        todoInput.value = ""; // Clear input
+    } else {
+        alert("Please enter a task.");
+    }
+};
     </script>
 }
