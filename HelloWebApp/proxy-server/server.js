@@ -1,15 +1,16 @@
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
+require('dotenv').config(); // Load environment variables from .env file
 
 const app = express();
-const PORT = 3001; // You can use any available port
+const PORT = process.env.PORT || 3001; // Use environment variable or default to 3001
 
 app.use(cors());
 
 app.get('/search', async (req, res) => {
     const { query } = req.query; // Get query from the URL
-    const apiKey = '5610e21d31ee63cfce6df2b13a5279f8017855dba24b8cb9976caa681142110a'; // Your API key
+    const apiKey = process.env.API_KEY; // Use API key from .env file
     const apiUrl = `https://serpapi.com/search.json?q=${encodeURIComponent(query)}&api_key=${apiKey}`;
 
     try {

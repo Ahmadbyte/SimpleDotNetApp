@@ -29,3 +29,5 @@
 /Users/shariqueahmad/Documents/Projects/SimpleDotNetApp/HelloWebApp/obj/Debug/net8.0/HelloWebApp.pdb
 /Users/shariqueahmad/Documents/Projects/SimpleDotNetApp/HelloWebApp/obj/Debug/net8.0/HelloWebApp.genruntimeconfig.cache
 /Users/shariqueahmad/Documents/Projects/SimpleDotNetApp/HelloWebApp/obj/Debug/net8.0/ref/HelloWebApp.dll
+/Users/shariqueahmad/Documents/Projects/SimpleDotNetApp/HelloWebApp/bin/Debug/net8.0/package-lock.json
+/Users/shariqueahmad/Documents/Projects/SimpleDotNetApp/HelloWebApp/bin/Debug/net8.0/package.json
