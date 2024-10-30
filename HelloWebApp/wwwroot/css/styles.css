@@ -1,7 +1,7 @@
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #73e6d4, #56c8d8);
+    background: linear-gradient(to right, #000000, #434343);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,8 +21,8 @@ body {
     max-width: 900px;
     width: 100%;
     padding: 40px;
-    background: linear-gradient(to bottom, #f3e2ee, #e3c9d0);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, #333333, #434343); /* Dark mode gradient */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Darker shadow for dark mode */
     border-radius: 8px;
     text-align: center;
     transition: background 0.5s ease; /* Smooth transition for background changes */
@@ -38,8 +38,16 @@ h1 {
     background: linear-gradient(45deg, #ff6a00, #ee0979);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: center;
+}
+
+h2{
+    color:rgb(224, 224, 224)
+}
+
+.time-display{
+    margin-bottom: 40px;
 }
 
 /* Search Section */
@@ -199,7 +207,7 @@ h1 {
     display: flex; /* Flex container for todo item */
     justify-content: space-between; /* Space between text and delete icon */
     padding: 10px;
-    background-color: #f9f9f9;
+    background-color: #ecebeb;
     border: 1px solid #ddd;
     border-radius: 4px;
     margin-bottom: 10px; /* Space below todo item */
@@ -219,7 +227,7 @@ h1 {
 
 /* Footer Styles */
 footer {
-    color: grey;
+    color: rgb(152, 149, 149);
     margin-top: 30px;
     padding: 20px;
     margin-left: 80px;
@@ -229,6 +237,8 @@ footer {
 
 footer p {
     margin: 0;
+    border-color: #555;
+    color: #bbb;
 }
 
 .dark-mode footer {
@@ -238,10 +248,12 @@ footer p {
 
 .social-icons {
     margin-top: 10px;
+    color: #bbb;
 }
 
 .social-icons a {
     margin: 0 5px; /* Space between icons */
+    color: #bbb;
 }
 
 .dark-mode .social-icons a .material-icons {

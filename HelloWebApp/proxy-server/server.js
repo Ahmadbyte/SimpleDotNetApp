@@ -6,6 +6,7 @@ require('dotenv').config(); // Load environment variables from .env file
 const app = express();
 const PORT = process.env.PORT || 3001; // Use environment variable or default to 3001
 
+// Allow CORS from any origin
 app.use(cors());
 
 app.get('/search', async (req, res) => {
@@ -15,6 +16,10 @@ app.get('/search', async (req, res) => {
 
     try {
         const response = await axios.get(apiUrl);
+        // Set CORS headers to allow requests from any origin
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+        res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
         res.json(response.data);
     } catch (error) {
         console.error('Error fetching data from SerpAPI:', error);

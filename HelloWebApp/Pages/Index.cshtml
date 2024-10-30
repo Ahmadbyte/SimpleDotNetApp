@@ -11,7 +11,7 @@
 <div class="main-container">
     <h1>Search App</h1>
 
-    <div id="currentTime" class="time-display"></div>
+    <div style="color: rgb(175, 173, 173);" id="currentTime" class="time-display"></div>
 
     <div class="search-section">
         <input type="text" id="searchTerm" placeholder="Search..." />
@@ -33,10 +33,10 @@
     <p>&copy; 2024 HelloWebApp. All rights reserved.</p>
     <div class="social-icons">
         <a href="https://www.gmail.com" target="_blank" aria-label="Gmail">
-            <span class="material-icons" style="color: #2d2b2a;">mail</span>
+            <span class="material-icons" style="color: rgb(175, 173, 173);">mail</span>
         </a>
         <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
-            <span class="material-icons" style="color: #322f31;">camera_alt</span>
+            <span class="material-icons" style="color: rgb(175, 173, 173);">camera_alt</span>
         </a>
     </div>
 </footer>
@@ -51,7 +51,7 @@
                 return;
             }
 
-            fetch(`http://localhost:3001/search?query=${encodeURIComponent(term)}`)
+            fetch(`https://simpledotnetapp-node.onrender.com/search?query=${encodeURIComponent(term)}`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -61,7 +61,7 @@
                 .then(data => {
                     const items = data.organic_results || [];
                     const resultDiv = document.getElementById("searchResults");
-                    resultDiv.innerHTML = items.length > 0 
+                    resultDiv.innerHTML = items.length > 0
                         ? items.map(item => `<p><a href="${item.link}" target="_blank">${item.title}</a></p>`).join('')
                         : "<p>No results found.</p>";
                 })
@@ -83,7 +83,7 @@
         }
 
         // Attach event listener for the Enter key for search input
-        document.getElementById("searchTerm").addEventListener("keypress", function(event) {
+        document.getElementById("searchTerm").addEventListener("keypress", function (event) {
             if (event.key === "Enter") {
                 performSearch();
             }
@@ -98,23 +98,23 @@
         if (SpeechRecognition) {
             const recognition = new SpeechRecognition();
 
-            recognition.onstart = function() {
+            recognition.onstart = function () {
                 console.log("Voice recognition started. Speak into the microphone.");
                 speak("Speak to search."); // Speak the message when recognition starts
             };
 
-            recognition.onresult = function(event) {
+            recognition.onresult = function (event) {
                 const transcript = event.results[0][0].transcript;
                 document.getElementById("searchTerm").value = transcript; // Set the transcript to the input
                 performSearch(); // Perform search automatically
             };
 
-            recognition.onerror = function(event) {
+            recognition.onerror = function (event) {
                 console.error("Error occurred in recognition: " + event.error);
             };
 
             // Attach microphone button event
-            document.getElementById("microphoneButton").onclick = function() {
+            document.getElementById("microphoneButton").onclick = function () {
                 recognition.start();
                 speak("Speak to search."); // Speak the message when the button is clicked
             };
@@ -151,7 +151,7 @@
                 deleteIcon.innerText = "delete"; // Material icon for delete
 
                 // Attach click event to the delete icon
-                deleteIcon.onclick = function() {
+                deleteIcon.onclick = function () {
                     todoList.removeChild(newTodoItem);
                 };
 
@@ -169,7 +169,7 @@
         document.getElementById("addTodoButton").onclick = addTodo;
 
         // Attach event listener for the Enter key in the todo input
-        document.getElementById("todoInput").addEventListener("keypress", function(event) {
+        document.getElementById("todoInput").addEventListener("keypress", function (event) {
             if (event.key === "Enter") {
                 addTodo(); // Call addTodo function
             }
