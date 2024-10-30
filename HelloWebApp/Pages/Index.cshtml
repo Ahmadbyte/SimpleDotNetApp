@@ -116,10 +116,7 @@
             // Attach microphone button event
             document.getElementById("microphoneButton").onclick = function() {
                 recognition.start();
-                // Only speak when recognition starts, not on every click
-                if (recognition.state === "inactive") {
-                    speak("Speak to search."); // Speak the message when the button is clicked
-                }
+                speak("Speak to search."); // Speak the message when the button is clicked
             };
         } else {
             console.log("Speech recognition not supported in this browser.");

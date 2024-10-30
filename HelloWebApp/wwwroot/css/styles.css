@@ -1,146 +1,259 @@
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #73e6d4, #56c8d8) !important; /* Gradient background */
+    background: linear-gradient(to right, #73e6d4, #56c8d8);
     display: flex;
-    justify-content: center; /* Center content */
-    align-items: center; /* Align content vertically */
-    min-height: 100vh; /* Full height of the viewport */
-    margin: 0; /* Remove default margin */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333; /* Text color for better readability */
+    transition: background 0.5s ease; /* Smooth transition for background changes */
+}
+
+.dark-mode {
+    background: linear-gradient(to right, #1e1e1e, #252525);
+    color: #f1f1f1; /* Light text color for dark mode */
 }
 
 /* Main Container */
 .main-container {
-    max-width: 900px; /* Increase the container width */
-    width: 100%; /* Full width */
-    padding: 40px; /* Increase padding for a roomier feel */
-    background: linear-gradient(to bottom, #f3e2ee, #e3c9d0) !important; /* Gradient background */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Box shadow */
-    border-radius: 8px; /* Rounded corners */
-    text-align: center; /* Center text */
+    max-width: 900px;
+    width: 100%;
+    padding: 40px;
+    background: linear-gradient(to bottom, #f3e2ee, #e3c9d0);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    transition: background 0.5s ease; /* Smooth transition for background changes */
+}
+
+.dark-mode .main-container {
+    background: linear-gradient(to bottom, #2e2e2e, #3a3a3a);
 }
 
 /* Heading */
 h1 {
-    font-size: 2.5em; /* Increase font size */
-    background: linear-gradient(45deg, #ff6a00, #ee0979); /* Gradient colors */
-    -webkit-background-clip: text; /* Clip background to text */
-    -webkit-text-fill-color: transparent; /* Make text color transparent */
-    margin-bottom: 20px; /* Margin below heading */
-    text-align: center; /* Center heading */
+    font-size: 2.5em;
+    background: linear-gradient(45deg, #ff6a00, #ee0979);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 /* Search Section */
 .search-section {
-    display: flex; /* Flex container for input and buttons */
-    justify-content: center; /* Center content */
-    margin-bottom: 30px; /* Space below search section */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
 }
 
 /* Search Input */
 #searchTerm {
-    padding: 12px; /* Padding inside search input */
-    width: 75%; /* Input width */
-    max-width: 700px; /* Max width */
-    border: 1px solid #ddd; /* Border style */
-    border-radius: 4px; /* Rounded corners */
-    font-size: 1.1em; /* Font size */
+    padding: 12px;
+    width: 75%;
+    max-width: 700px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1.1em;
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+#searchTerm:focus {
+    border-color: #4CAF50; /* Border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+.dark-mode #searchTerm {
+    border-color: #555; /* Border color for dark mode */
+    background-color: #333; /* Background color for dark mode */
+    color: #f1f1f1; /* Text color for dark mode */
 }
 
 /* Search Button */
+#searchButton, #microphoneButton {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-left: 10px;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
 #searchButton {
-    padding: 12px 25px; /* Padding inside button */
-    background-color: #4CAF50; /* Green button color */
-    color: white; /* Button text color */
-    border: none; /* No border */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 1.1em; /* Font size */
-    margin-left: 10px; /* Space between input and button */
+    background-color: #4CAF50;
+    color: white;
 }
 
-/* Search Button Hover Effect */
 #searchButton:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #45a049;
 }
 
-/* Microphone Button */
 #microphoneButton {
-    padding: 12px; /* Padding inside microphone button */
-    background-color: #008CBA; /* Blue button color */
-    color: white; /* Button text color */
-    border: none; /* No border */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 1.1em; /* Font size */
-    margin-left: 10px; /* Space between input and button */
+    background-color: #008CBA;
+    color: white;
 }
 
-/* Microphone Button Hover Effect */
 #microphoneButton:hover {
-    background-color: #007bb5; /* Darker blue on hover */
+    background-color: #007bb5;
+}
+
+.dark-mode #searchButton {
+    background-color: #3a8b3a;
+}
+
+.dark-mode #searchButton:hover {
+    background-color: #337d33;
+}
+
+.dark-mode #microphoneButton {
+    background-color: #005f7f;
+}
+
+.dark-mode #microphoneButton:hover {
+    background-color: #004d66;
 }
 
 /* Search Results Section */
 .search-results {
-    margin-top: 20px; /* Space above search results */
+    margin-top: 20px;
+}
+
+.search-results p {
+    margin: 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.dark-mode .search-results p {
+    background-color: #444;
+    border-color: #555;
 }
 
 /* Todo Section */
 .todo-section {
-    margin-top: 30px; /* Space above todo section */
+    margin-top: 30px;
 }
 
 /* Todo Input */
 #todoInput {
-    padding: 12px; /* Padding inside todo input */
-    width: 75%; /* Input width */
-    max-width: 700px; /* Max width */
-    border: 1px solid #ddd; /* Border style */
-    border-radius: 4px; /* Rounded corners */
-    font-size: 1.1em; /* Font size */
+    padding: 12px;
+    width: 75%;
+    max-width: 700px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1.1em;
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+#todoInput:focus {
+    border-color: #4CAF50; /* Border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+.dark-mode #todoInput {
+    border-color: #555; /* Border color for dark mode */
+    background-color: #333; /* Background color for dark mode */
+    color: #f1f1f1; /* Text color for dark mode */
 }
 
 /* Add Button */
 #addTodoButton {
-    padding: 12px 25px; /* Padding inside button */
-    background-color: #4CAF50; /* Green button color */
-    color: white; /* Button text color */
-    border: none; /* No border */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 1.1em; /* Font size */
-    margin-left: 10px; /* Space between input and button */
+    padding: 12px 25px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-left: 10px;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    float: right; /* Align button to the right */
 }
 
-/* Add Button Hover Effect */
 #addTodoButton:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #45a049;
+}
+
+.dark-mode #addTodoButton {
+    background-color: #3a8b3a;
+}
+
+.dark-mode #addTodoButton:hover {
+    background-color: #337d33;
+}
+
+/* Todo List */
+#todoList {
+    list-style: none; /* Remove default list style */
+    padding: 0; /* Remove default padding */
+    margin-top: 20px; /* Space above todo list */
+}
+
+#todoList li {
+    display: flex; /* Flex container for todo item */
+    justify-content: space-between; /* Space between text and delete icon */
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px; /* Space below todo item */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.dark-mode #todoList li {
+    background-color: #444;
+    border-color: #555;
+}
+
+#todoList li .material-icons {
+    font-size: 16px;
+    color: red;
+    cursor: pointer; /* Pointer cursor on hover */
 }
 
 /* Footer Styles */
 footer {
-    margin-top: 30px; /* Margin above footer */
-    padding: 20px; /* Padding around footer */
-    background-color: #f8f8f8; /* Light footer background */
-    text-align: center; /* Center text in footer */
-    border-top: 1px solid #ddd; /* Top border */
+    color: grey;
+    margin-top: 30px;
+    padding: 20px;
+    margin-left: 80px;
+    text-align: center; /* Center footer text */
+    border-top: 1px solid #ddd;
 }
 
 footer p {
-    margin: 0; /* Remove default margin */
+    margin: 0;
+}
+
+.dark-mode footer {
+    border-color: #555;
+    color: #bbb;
 }
 
 .social-icons {
-    margin-top: 10px; /* Space above social icons */
+    margin-top: 10px;
+}
+
+.social-icons a {
+    margin: 0 5px; /* Space between icons */
+}
+
+.dark-mode .social-icons a .material-icons {
+    color: #bbb;
 }
 
 /* Responsive Design */
 @media (max-width: 600px) {
     .search-section, .todo-section {
-        flex-direction: column; /* Stack elements vertically on small screens */
+        flex-direction: column;
     }
     .search-section input[type="text"], #todoInput {
-        width: 100%; /* Full width for inputs on small screens */
+        width: 100%;
     }
 }
