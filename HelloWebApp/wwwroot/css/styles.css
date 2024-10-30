@@ -1,7 +1,7 @@
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #73e6d4; /* Background color */
+    background: linear-gradient(to right, #73e6d4, #56c8d8) !important; /* Gradient background */
     display: flex;
     justify-content: center; /* Center content */
     align-items: center; /* Align content vertically */
@@ -14,7 +14,7 @@ body {
     max-width: 900px; /* Increase the container width */
     width: 100%; /* Full width */
     padding: 40px; /* Increase padding for a roomier feel */
-    background-color: rgb(243, 226, 238); /* Background color */
+    background: linear-gradient(to bottom, #f3e2ee, #e3c9d0) !important; /* Gradient background */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Box shadow */
     border-radius: 8px; /* Rounded corners */
     text-align: center; /* Center text */
@@ -27,164 +27,120 @@ h1 {
     -webkit-background-clip: text; /* Clip background to text */
     -webkit-text-fill-color: transparent; /* Make text color transparent */
     margin-bottom: 20px; /* Margin below heading */
-    margin-top: -10px; /* Margin above heading */
-    display: inline-block; /* Ensure gradient applies correctly */
-}
-
-/* Current Time Display */
-.time-display {
-    font-size: 1.2em; /* Slightly increase the font size */
-    color: #555; /* Time color */
-    margin-bottom: 30px; /* Margin below time display */
+    text-align: center; /* Center heading */
 }
 
 /* Search Section */
 .search-section {
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
-    margin-bottom: 30px; /* Margin below search section */
+    display: flex; /* Flex container for input and buttons */
+    justify-content: center; /* Center content */
+    margin-bottom: 30px; /* Space below search section */
 }
 
 /* Search Input */
-.search-section input[type="text"] {
-    padding: 12px; /* Padding inside input */
-    width: 75%; /* Expand input width */
-    max-width: 700px; /* Max width for input */
+#searchTerm {
+    padding: 12px; /* Padding inside search input */
+    width: 75%; /* Input width */
+    max-width: 700px; /* Max width */
     border: 1px solid #ddd; /* Border style */
     border-radius: 4px; /* Rounded corners */
     font-size: 1.1em; /* Font size */
 }
 
 /* Search Button */
-.search-section button {
+#searchButton {
     padding: 12px 25px; /* Padding inside button */
-    background-color: #4285f4; /* Button color */
+    background-color: #4CAF50; /* Green button color */
     color: white; /* Button text color */
     border: none; /* No border */
     border-radius: 4px; /* Rounded corners */
     cursor: pointer; /* Pointer cursor on hover */
-    font-size: 1.1em; /* Font size for button */
+    font-size: 1.1em; /* Font size */
     margin-left: 10px; /* Space between input and button */
 }
 
 /* Search Button Hover Effect */
-.search-section button:hover {
-    background-color: #357ae8; /* Darken button on hover */
+#searchButton:hover {
+    background-color: #45a049; /* Darker green on hover */
 }
 
 /* Microphone Button */
 #microphoneButton {
-    padding: 8px; /* Adjust padding */
-    background-color: transparent; /* Transparent background */
-    border: none; /* No border */
-    cursor: pointer; /* Pointer cursor */
-    margin-left: 10px; /* Space from other elements */
-    outline: none; /* Remove outline */
-}
-
-/* Microphone Icon */
-#microphoneButton i {
-    font-size: 28px; /* Increase icon size */
-    color: #4285f4; /* Match button color */
-}
-
-/* Microphone Icon Hover Effect */
-#microphoneButton:hover i {
-    color: #357ae8; /* Change icon color on hover */
-}
-
-/* Search Results Section */
-.search-results p {
-    font-size: 1.1em; /* Font size for results */
-    color: #333; /* Text color for results */
-    text-align: left; /* Align text to the left */
-    padding: 8px 0; /* Padding between results */
-}
-
-/* Todo List Section */
-.todo-section {
-    margin-top: 30px; /* Margin above todo section */
-}
-
-/* Todo Input */
-.todo-section input[type="text"] {
-    padding: 12px; /* Padding inside input */
-    width: calc(100% - 120px); /* Width calculation */
-    margin-right: 10px; /* Space between input and button */
-    border: 1px solid #ddd; /* Border style */
-    border-radius: 4px; /* Rounded corners */
-}
-
-/* Todo Button */
-.todo-section button {
-    padding: 12px 20px; /* Padding for todo button */
-    background-color: #5cb85c; /* Green button color */
+    padding: 12px; /* Padding inside microphone button */
+    background-color: #008CBA; /* Blue button color */
     color: white; /* Button text color */
     border: none; /* No border */
     border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1.1em; /* Font size */
+    margin-left: 10px; /* Space between input and button */
 }
 
-/* Todo Button Hover Effect */
-.todo-section button:hover {
-    background-color: #4cae4c; /* Darken button on hover */
+/* Microphone Button Hover Effect */
+#microphoneButton:hover {
+    background-color: #007bb5; /* Darker blue on hover */
 }
 
-/* Todo List Items */
-/* Todo List Items */
-#todoList li {
-    display: flex; /* Use flexbox for alignment */
-    justify-content: space-between; /* Space between todo text and delete button */
-    align-items: center; /* Center items vertically */
-    padding: 12px; /* Padding for each todo item */
-    border: 1px solid #ddd; /* Light gray border */
-    border-radius: 5px; /* Rounded corners */
-    margin-bottom: 10px; /* Spacing between todos */
-    background-color: #ffffff; /* White background for todos */
-    text-align: left; /* Align text to the left */
-    margin-right: 70px;
+/* Search Results Section */
+.search-results {
+    margin-top: 20px; /* Space above search results */
 }
 
-/* Delete Button */
-.deleteButton {
-    background-color: transparent; /* Transparent background for the delete button */
-    color: #dc3545; /* Red text color */
+/* Todo Section */
+.todo-section {
+    margin-top: 30px; /* Space above todo section */
+}
+
+/* Todo Input */
+#todoInput {
+    padding: 12px; /* Padding inside todo input */
+    width: 75%; /* Input width */
+    max-width: 700px; /* Max width */
+    border: 1px solid #ddd; /* Border style */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 1.1em; /* Font size */
+}
+
+/* Add Button */
+#addTodoButton {
+    padding: 12px 25px; /* Padding inside button */
+    background-color: #4CAF50; /* Green button color */
+    color: white; /* Button text color */
     border: none; /* No border */
-    cursor: pointer; /* Pointer cursor */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1.1em; /* Font size */
+    margin-left: 10px; /* Space between input and button */
 }
 
-/* Delete Button Hover Effect */
-.deleteButton:hover {
-    color: #c82333; /* Darker red on hover */
+/* Add Button Hover Effect */
+#addTodoButton:hover {
+    background-color: #45a049; /* Darker green on hover */
 }
-
 
 /* Footer Styles */
 footer {
-    margin-top: 10px; /* Margin above footer */
-    font-size: 1em; /* Font size for footer */
-    color: #777; /* Footer text color */
-    text-align: center; /* Center text */
+    margin-top: 30px; /* Margin above footer */
+    padding: 20px; /* Padding around footer */
+    background-color: #f8f8f8; /* Light footer background */
+    text-align: center; /* Center text in footer */
+    border-top: 1px solid #ddd; /* Top border */
 }
 
-/* Social Icons */
+footer p {
+    margin: 0; /* Remove default margin */
+}
+
 .social-icons {
-    display: flex;
-    justify-content: center;
-    margin-top: -5px;
+    margin-top: 10px; /* Space above social icons */
 }
 
-.social-icons a {
-    margin: 0 10px;
-    color: #000; /* Set color for the icons */
-    text-decoration: none; /* Remove underline */
-}
-
-.social-icons i {
-    font-size: 24px; /* Adjust icon size */
-}
-
-/* Social Icons Hover Effect */
-.social-icons a:hover {
-    color: #4285f4; /* Change color on hover */
+/* Responsive Design */
+@media (max-width: 600px) {
+    .search-section, .todo-section {
+        flex-direction: column; /* Stack elements vertically on small screens */
+    }
+    .search-section input[type="text"], #todoInput {
+        width: 100%; /* Full width for inputs on small screens */
+    }
 }

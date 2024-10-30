@@ -33,10 +33,10 @@
     <p>&copy; 2024 HelloWebApp. All rights reserved.</p>
     <div class="social-icons">
         <a href="https://www.gmail.com" target="_blank" aria-label="Gmail">
-            <span class="material-icons" style="color: #2d2b2a;">mail</span> <!-- Gmail icon -->
+            <span class="material-icons" style="color: #2d2b2a;">mail</span>
         </a>
         <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
-            <span class="material-icons" style="color: #322f31;">camera_alt</span> <!-- Instagram icon -->
+            <span class="material-icons" style="color: #322f31;">camera_alt</span>
         </a>
     </div>
 </footer>
@@ -71,7 +71,18 @@
                 });
         }
 
-        // Attach event listener for the Enter key
+        // Function to speak a message
+        function speak(message) {
+            if ('speechSynthesis' in window) {
+                const speech = new SpeechSynthesisUtterance(message);
+                speech.lang = 'en-US'; // Set the language for speech
+                window.speechSynthesis.speak(speech); // Speak the message
+            } else {
+                console.error("Speech Synthesis not supported in this browser.");
+            }
+        }
+
+        // Attach event listener for the Enter key for search input
         document.getElementById("searchTerm").addEventListener("keypress", function(event) {
             if (event.key === "Enter") {
                 performSearch();
@@ -89,6 +100,7 @@
 
             recognition.onstart = function() {
                 console.log("Voice recognition started. Speak into the microphone.");
+                speak("Speak to search."); // Speak the message when recognition starts
             };
 
             recognition.onresult = function(event) {
@@ -104,6 +116,10 @@
             // Attach microphone button event
             document.getElementById("microphoneButton").onclick = function() {
                 recognition.start();
+                // Only speak when recognition starts, not on every click
+                if (recognition.state === "inactive") {
+                    speak("Speak to search."); // Speak the message when the button is clicked
+                }
             };
         } else {
             console.log("Speech recognition not supported in this browser.");
@@ -118,38 +134,48 @@
         setInterval(updateTime, 1000);
 
         // Todo List Functionality
-        document.getElementById("addTodoButton").onclick = function() {
-    const todoInput = document.getElementById("todoInput");
-    const todoText = todoInput.value.trim();
-    if (todoText) {
-        const todoList = document.getElementById("todoList");
-        const newTodoItem = document.createElement("li");
+        function addTodo() {
+            const todoInput = document.getElementById("todoInput");
+            const todoText = todoInput.value.trim();
+            if (todoText) {
+                const todoList = document.getElementById("todoList");
+                const newTodoItem = document.createElement("li");
 
-        // Create a span for the todo text
-        const todoSpan = document.createElement("span");
-        todoSpan.textContent = todoText;
+                // Create a span for the todo text
+                const todoSpan = document.createElement("span");
+                todoSpan.textContent = todoText;
 
-        // Create delete icon only (without a button)
-        const deleteIcon = document.createElement("span");
-        deleteIcon.className = "material-icons";
-        deleteIcon.style.fontSize = "16px";
-        deleteIcon.style.color = "red";
-        deleteIcon.style.cursor = "pointer"; // Make it look clickable
-        deleteIcon.innerText = "delete"; // Material icon for delete
+                // Create delete icon only (without a button)
+                const deleteIcon = document.createElement("span");
+                deleteIcon.className = "material-icons";
+                deleteIcon.style.fontSize = "16px";
+                deleteIcon.style.color = "red";
+                deleteIcon.style.cursor = "pointer"; // Make it look clickable
+                deleteIcon.innerText = "delete"; // Material icon for delete
 
-        // Attach click event to the delete icon
-        deleteIcon.onclick = function() {
-            todoList.removeChild(newTodoItem);
-        };
+                // Attach click event to the delete icon
+                deleteIcon.onclick = function() {
+                    todoList.removeChild(newTodoItem);
+                };
 
-        // Append elements to new todo item
-        newTodoItem.appendChild(todoSpan);
-        newTodoItem.appendChild(deleteIcon);
-        todoList.appendChild(newTodoItem);
-        todoInput.value = ""; // Clear input
-    } else {
-        alert("Please enter a task.");
-    }
-};
+                // Append elements to new todo item
+                newTodoItem.appendChild(todoSpan);
+                newTodoItem.appendChild(deleteIcon);
+                todoList.appendChild(newTodoItem);
+                todoInput.value = ""; // Clear input
+            } else {
+                alert("Please enter a task.");
+            }
+        }
+
+        // Attach click event for the Add button
+        document.getElementById("addTodoButton").onclick = addTodo;
+
+        // Attach event listener for the Enter key in the todo input
+        document.getElementById("todoInput").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                addTodo(); // Call addTodo function
+            }
+        });
     </script>
 }
