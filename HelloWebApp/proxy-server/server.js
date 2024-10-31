@@ -12,7 +12,8 @@ app.use(cors());
 app.get('/search', async (req, res) => {
     const { query } = req.query; // Get query from the URL
     const apiKey = process.env.API_KEY; // Use API key from .env file
-    const apiUrl = `https://serpapi.com/search.json?q=${encodeURIComponent(query)}&api_key=${apiKey}`;
+    const cx = 'a4f4acb621a6d4f72'; // Your Custom Search Engine ID
+    const apiUrl = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(query)}&key=${apiKey}&cx=${cx}`;
 
     try {
         const response = await axios.get(apiUrl);
@@ -22,7 +23,7 @@ app.get('/search', async (req, res) => {
         res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
         res.json(response.data);
     } catch (error) {
-        console.error('Error fetching data from SerpAPI:', error);
+        console.error('Error fetching data from Google Custom Search API:', error);
         res.status(500).json({ error: 'Error fetching data' });
     }
 });
