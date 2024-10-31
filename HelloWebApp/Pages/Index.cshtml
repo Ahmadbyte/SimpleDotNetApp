@@ -42,6 +42,7 @@
 </footer>
 
 @section Scripts {
+
     <script>
         // Function to perform search
         function performSearch() {
@@ -51,7 +52,11 @@
                 return;
             }
 
-            fetch(`https://simpledotnetapp-node.onrender.com/search?query=${encodeURIComponent(term)}`)
+            const apiKey = "AIzaSyDgHLrJ2NsSdffOA_Eyf_qw5tmVqHzau4Y"; // Replace with your Google API key
+            const cx = "a4f4acb621a6d4f72"; // Replace with your Custom Search Engine ID
+            const apiUrl = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(term)}&key=${apiKey}&cx=${cx}`;
+
+            fetch(apiUrl)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -59,7 +64,8 @@
                     return response.json();
                 })
                 .then(data => {
-                    const items = data.organic_results || [];
+                    // Ensure you check the structure of the returned data
+                    const items = data.items || []; // Check if data.items is available
                     const resultDiv = document.getElementById("searchResults");
                     resultDiv.innerHTML = items.length > 0
                         ? items.map(item => `<p><a href="${item.link}" target="_blank">${item.title}</a></p>`).join('')
